@@ -1,0 +1,101 @@
+/* The Tang Yin Problem --- house style.
+ *
+ * astro-theme-university derives every semantic token from three brand
+ * colours via relative colour syntax, so retheming the site is a matter of
+ * moving those three and the surfaces under them, not of overriding
+ * component styles one at a time. This file is loaded after the theme and
+ * after slop.css, and replaces the Slop gold with the palette below.
+ *
+ * The accent is cinnabar --- the pigment in the seal paste this course
+ * spends week 5 reading. It is the one saturated colour on the site, and it
+ * is reserved for things that mark or certify: seal rules, the confidence
+ * labels on the attribution ladder, active navigation. Nothing decorative
+ * gets to be red.
+ *
+ * Every token is declared for both colour schemes. The theme's own tokens
+ * use `light-dark()` and the build checks contrast, so a light-only palette
+ * would fail in dark mode rather than merely look wrong.
+ */
+
+:root {
+  /* --- brand: the three the theme derives from ------------------------ */
+  --at-primary: light-dark(#a93b2c, #e2917f);
+  --at-secondary: light-dark(#7d4a2e, #c69a7c);
+  --at-tertiary: light-dark(#625f58, #9e9a91);
+
+  /* --- surfaces ------------------------------------------------------- */
+  /* Paper, not white: the body of the site is a sheet, and the cards sit
+     on it slightly lighter rather than in a drop shadow. */
+  --at-bg: light-dark(#faf8f5, #14130f);
+  --at-bg-alt: light-dark(#f2ece4, #1d1b17);
+  --at-bg-elevated: light-dark(#ffffff, #24211c);
+  --at-border: light-dark(#e4dacd, #332f28);
+  --at-divider: light-dark(#e4dacd, #332f28);
+
+  /* --- text ----------------------------------------------------------- */
+  --at-text: light-dark(#1a1815, #ece6dc);
+  --at-text-secondary: light-dark(#403c35, #c3bcaf);
+  --at-text-muted: light-dark(#625f58, #989183);
+
+  /* --- type ----------------------------------------------------------- */
+  /* Newsreader for running prose: this is a reading site before it is an
+     interface, and the body face should behave like one. Cinzel is the
+     display face, used at section headings and above only --- it is an
+     inscriptional roman and turns to mush below about 18px. */
+  /* The `--font-*` variables are emitted by Astro's font pipeline (see the
+     `fonts` block in astro.config.ts), which self-hosts each face. */
+  --at-font-body: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --at-font-display: var(--font-cinzel), var(--font-newsreader), Georgia, serif;
+  --at-font-ui: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+
+  /* Cinzel is all-caps by construction and sets wide; it needs negative
+     tracking at display sizes to stop headings drifting apart. */
+  --ty-display-tracking: -0.01em;
+
+  /* --- house additions ------------------------------------------------ */
+  --ty-seal: light-dark(#a93b2c, #e2917f);
+  --ty-seal-soft: light-dark(#fbf0ed, #2e1e1a);
+  --ty-rule: light-dark(#d9cec0, #3a352d);
+  --ty-mount: light-dark(#f2ece4, #1b1916);
+}
+
+/* Display face for headings and the nav wordmark. The theme has no
+   heading-font token, so this reaches for the elements directly --- kept to
+   one rule so there is a single place to undo it. */
+h1,
+h2,
+h3,
+.at-nav-brand {
+  font-family: var(--at-font-display);
+  letter-spacing: var(--ty-display-tracking);
+}
+
+/* Small headings go back to the body serif: Cinzel below ~18px stops being
+   legible and starts being texture. */
+h4,
+h5,
+h6 {
+  font-family: var(--at-font-body);
+  letter-spacing: 0;
+}
+
+/* Interface chrome --- nav, buttons, labels, captions --- stays sans, so the
+   serif reads as "this is the document" and the sans as "this is the site". */
+.at-nav,
+.at-nav a,
+button,
+input,
+kbd,
+label,
+select,
+textarea,
+.at-card small,
+.at-search-input {
+  font-family: var(--at-font-ui);
+}
+
+/* Prose measure: long serif lines are the fastest way to make a reading site
+   unreadable. */
+:where(main) p {
+  max-width: 68ch;
+}

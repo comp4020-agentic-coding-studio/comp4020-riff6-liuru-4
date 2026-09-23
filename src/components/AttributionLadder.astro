@@ -1,0 +1,194 @@
+---
+import { Image } from "astro:assets";
+import { attributionLadder, ladderSource } from "../lib/attribution-ladder";
+
+/**
+ * The course's thesis, stated in artifacts rather than prose: three works
+ * from one museum, carrying that museum's three levels of confidence about
+ * the same painter.
+ *
+ * The two left-hand scrolls entered the Met in the same 1988 bequest, so
+ * provenance is held constant and the attribution wording is the only thing
+ * that differs --- which is the argument.
+ *
+ * Formats are deliberately not normalised. A handscroll is twice as wide as
+ * it is tall and a hanging scroll is half as wide; cropping them to a shared
+ * frame would hide a difference that is itself evidence, so each sits
+ * `contain` on a mount of fixed height at its true proportions.
+ */
+---
+
+<figure class="ladder">
+  <figcaption class="ladder-intro">
+    <span class="ladder-eyebrow">The problem, in three labels</span>
+    <p>
+      Three works in one collection, catalogued by one institution. The
+      paintings did not change between them; the confidence did.
+    </p>
+  </figcaption>
+
+  <ol class="ladder-items">
+    {
+      attributionLadder.map((work) => (
+        <li class={`ladder-item is-${work.confidence}`}>
+          <div class="ladder-mount">
+            <Image
+              src={work.image}
+              alt={work.alt}
+              widths={[320, 640, 960]}
+              sizes="(min-width: 60rem) 30vw, (min-width: 40rem) 45vw, 90vw"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+          <p class="ladder-attribution">{work.attribution}</p>
+          <p class="ladder-gloss">{work.gloss}</p>
+          <p class="ladder-meta">
+            <a href={work.objectUrl} rel="noopener noreferrer" target="_blank">
+              <cite>{work.title}</cite>
+            </a>
+            <span>{work.date}</span>
+            <span>{work.medium}</span>
+            <span class="ladder-accession">{work.accession}</span>
+          </p>
+        </li>
+      ))
+    }
+  </ol>
+
+  <p class="ladder-source">
+    All three: {ladderSource.institution}, {ladderSource.terms}. Attribution
+    lines, titles, dates and credit lines are the museum's own wording.
+  </p>
+</figure>
+
+<style>
+  /* The reading column is 48rem; this is the one element allowed out of it.
+     It extends right only: the theme draws a vertical content rule down the
+     left edge of the column (aligned to bisect the crest --- see
+     --at-logo-offset-x in slop.css), and a symmetric plate would cross it.
+     Staying left-aligned with the prose and running into the right margin
+     keeps that rule intact and reads as a figure in a book.
+
+     `50vw - 50%` is half the slack beside the centred column, so the
+     breakout collapses to zero on narrow screens instead of overflowing. */
+  .ladder {
+    --ladder-extra: clamp(0rem, calc(50vw - 50% - 2rem), 16rem);
+
+    width: calc(100% + var(--ladder-extra));
+    margin: 0 calc(-1 * var(--ladder-extra)) 3.5rem 0;
+  }
+
+  .ladder-intro {
+    margin-block-end: 1.5rem;
+  }
+
+  .ladder-eyebrow {
+    display: block;
+    margin-block-end: 0.4rem;
+    color: var(--ty-seal);
+    font-family: var(--at-font-ui);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .ladder-intro p {
+    max-width: 46ch;
+    margin: 0;
+    color: var(--at-text-secondary);
+  }
+
+  .ladder-items {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  /* The mount, not the image, is what lines up: a fixed-height field of
+     paper tone that each work sits inside at its own proportions. */
+  .ladder-mount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
+    padding: 1rem;
+    border: 1px solid var(--ty-rule);
+    background: var(--ty-mount);
+  }
+
+  .ladder-mount :global(img) {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  /* One cinnabar rule under the secure attribution, none under the others.
+     The colour is doing the same job the museum's wording does. */
+  .ladder-attribution {
+    margin: 0.85rem 0 0;
+    padding-block-end: 0.3rem;
+    font-family: var(--at-font-display);
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+
+  .is-secure .ladder-attribution {
+    border-block-end: 2px solid var(--ty-seal);
+    color: var(--ty-seal);
+  }
+
+  .is-contested .ladder-attribution {
+    border-block-end: 1px dashed var(--ty-rule);
+  }
+
+  .is-copy .ladder-attribution {
+    border-block-end: 1px dotted var(--ty-rule);
+    color: var(--at-text-muted);
+  }
+
+  .ladder-gloss {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--at-text-secondary);
+  }
+
+  .ladder-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin: 0.7rem 0 0;
+    font-family: var(--at-font-ui);
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--at-text-muted);
+  }
+
+  .ladder-accession {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ladder-source {
+    margin: 1.25rem 0 0;
+    font-family: var(--at-font-ui);
+    font-size: 0.72rem;
+    color: var(--at-text-muted);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ladder-mount :global(img) {
+      transition: transform 250ms ease;
+    }
+
+    .ladder-item:hover .ladder-mount :global(img) {
+      transform: scale(1.02);
+    }
+  }
+</style>
