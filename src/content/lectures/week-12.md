@@ -11,7 +11,7 @@ teachers:
   - marisol-quaye
 related:
   - sessions/12-defense
-  - assessments/final-project
+  - assessments/oral-defence
 ---
 
 Week 11 argued that "authentic" is a working distinction, not a fact waiting

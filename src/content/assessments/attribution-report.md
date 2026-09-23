@@ -1,8 +1,8 @@
 ---
-title: "Attribution note"
+title: "Attribution report"
 description:
-  A short, single-thread argument for or against one painting's attribution,
-  built from materials and/or brushwork evidence alone.
+  A provisional verdict on one painting's attribution, reached through one
+  or two evidence types and honest about what it has not yet examined.
 week: 4
 outcomes:
   - LO2
@@ -19,20 +19,23 @@ marking:
       weight: 25
 spec:
   - argues one specific, falsifiable attribution claim about one named painting
-  - rests on materials and/or brushwork evidence only --- seals and colophons
-    aren't taught until weeks 5--6, and using them here reads as skipping ahead
-    rather than as extra rigour
+  - works one or two evidence types in real depth rather than gesturing at
+    several --- and only evidence the course has taught by week 4, which is
+    materials and brushwork
+  - states the verdict as provisional, and names the evidence type it has
+    not yet examined that is most likely to overturn it
   - names at least one piece of evidence that complicates its own conclusion,
     and says why it doesn't overturn it
 related:
-  - assessments/dossier
+  - assessments/comparative-visual-analysis
+  - assessments/authentication-dossier
 ---
 
 ## The brief
 
-> In 800--1200 words, argue a specific attribution claim about one named,
-> disputed painting, using only the evidence this course has taught by
-> week 5: materials and brushwork.
+> In 800--1200 words, reach a provisional verdict on one named, disputed
+> painting, working one or two evidence types in depth --- and only the
+> evidence this course has taught so far: materials and brushwork.
 
 Pick a painting from the seminar packets (weeks 2--4) or one of your own
 finding, provided its attribution is genuinely contested in the literature
@@ -44,6 +47,13 @@ usually don't; the mechanics are in naming your evidence precisely enough
 that another student could check your reasoning against the same
 reproduction.
 
+"Provisional" is doing real work in the brief. Seals arrive next week and
+colophons the week after, and either can overturn a verdict built on the
+hand alone. Say so: close by naming the evidence type you have not examined
+that most threatens your conclusion, and what it would have to show. A
+report that reaches a clear verdict and marks its own expiry date is worth
+more here than one that stays vague to stay safe.
+
 ## What you submit
 
 A single markdown or PDF file, 800--1200 words, uploaded through the
@@ -51,7 +61,7 @@ course system. Cite every reproduction and source you used, including any
 AI or outside research assistance, in a short footnote --- see the
 [policies page](/policies/) for what that footnote needs to cover.
 
-The marking table above weights evidence quality highest: a note that
+The marking table above weights evidence quality highest: a report that
 handles two kinds of evidence carefully outscores one that gestures at
 four kinds without checking any of them against the seminar's shared
 vocabulary.

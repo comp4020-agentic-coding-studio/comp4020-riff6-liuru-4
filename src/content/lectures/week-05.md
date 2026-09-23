@@ -11,7 +11,7 @@ teachers:
   - marisol-quaye
 related:
   - sessions/05-seal-clinic
-  - assessments/attribution-note
+  - assessments/attribution-report
 ---
 
 A signature is a single, repeatable gesture; a seal is a carved object with

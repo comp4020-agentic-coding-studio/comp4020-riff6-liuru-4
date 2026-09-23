@@ -16,7 +16,7 @@ spec:
   - your dossier is submitted by the end of this week
 related:
   - lectures/week-08
-  - assessments/dossier
+  - assessments/authentication-dossier
 ---
 
 ## Before the seminar

@@ -11,7 +11,7 @@ teachers:
   - marisol-quaye
 related:
   - sessions/04-brushwork
-  - assessments/attribution-note
+  - assessments/attribution-report
 ---
 
 A painter's brushwork is often described as a signature nobody can forge,

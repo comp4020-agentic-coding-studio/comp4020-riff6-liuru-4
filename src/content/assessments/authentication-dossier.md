@@ -1,8 +1,9 @@
 ---
-title: "The dossier"
+title: "Authentication dossier"
 description:
-  A full authentication dossier on one disputed painting, working every
-  evidence type the semester has taught and logging where they disagree.
+  A full authentication dossier on one disputed painting, combining visual,
+  technical, documentary, provenance and market evidence, and explaining
+  the contradictions between them rather than smoothing them over.
 week: 8
 outcomes:
   - LO1
@@ -24,15 +25,17 @@ marking:
     - name: Clarity of the written dossier
       weight: 15
 spec:
-  - works at least three distinct evidence types (materials, brushwork,
-    seals, colophons, market context) against one named painting
+  - works at least three distinct evidence types --- visual, technical,
+    documentary, provenance, market --- against one named painting
   - keeps an explicit evidence log, including evidence that complicates or
     contradicts the eventual conclusion
+  - explains each contradiction between evidence types rather than dropping
+    the inconvenient side, and says which it weights more and why
   - reaches a stated verdict with a stated confidence level, not an
     open-ended "more research is needed"
 related:
-  - assessments/attribution-note
-  - assessments/final-project
+  - assessments/attribution-report
+  - assessments/oral-defence
 ---
 
 ## The brief
@@ -41,9 +44,10 @@ related:
 > painting: every relevant evidence type this course has taught, an
 > explicit log of where they agree and disagree, and a stated verdict.
 
-This is the attribution note's method scaled up, not a longer version of the
-same argument. Where the note could rest on one or two evidence types, the
-dossier has to work at least three, and its central discipline is the log:
+This is the attribution report's method scaled up, not a longer version of
+the same argument. Where the report could rest on one or two evidence
+types, the dossier has to work at least three, and its central discipline
+is the log:
 every piece of evidence goes in, including the pieces that argue against
 where you end up. A dossier that quietly drops an inconvenient seal reading
 is worse than one that names the seal reading, explains why it's

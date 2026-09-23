@@ -2,7 +2,7 @@
 title: "Brushwork clinic"
 description:
   Building a shared vocabulary for describing a stroke, then using it
-  against your own attribution-note painting.
+  against your own attribution-report painting.
 week: 4
 outcomes:
   - LO2
@@ -12,11 +12,11 @@ teachers:
 spec:
   - you can describe a specific stroke using the seminar's shared vocabulary,
     not general impressions
-  - you can apply that vocabulary to your own attribution-note painting and
+  - you can apply that vocabulary to your own attribution-report painting and
     say what it does or doesn't support
 related:
   - lectures/week-04
-  - assessments/attribution-note
+  - assessments/attribution-report
 ---
 
 ## Before the seminar
@@ -29,7 +29,7 @@ haven't already, and bring the best reproduction you can find of it.
 The first half is a shared exercise: describing the same stroke, from the
 same securely attributed painting, in the vocabulary from lecture, until the
 room converges on similar descriptions. The second half turns that
-vocabulary on your own attribution-note painting, in pairs, with your
+vocabulary on your own attribution-report painting, in pairs, with your
 partner pushing back on any description vague enough to mean nothing.
 
 ## Afterwards

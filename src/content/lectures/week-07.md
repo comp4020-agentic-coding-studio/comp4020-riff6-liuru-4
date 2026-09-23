@@ -11,7 +11,7 @@ teachers:
   - marisol-quaye
 related:
   - sessions/07-market-sourcebook
-  - assessments/dossier
+  - assessments/authentication-dossier
 ---
 
 "Suzhou pian" names a real, organised production system, not a scattering of

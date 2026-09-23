@@ -12,7 +12,7 @@ teachers:
   - marisol-quaye
 related:
   - sessions/08-case-study
-  - assessments/dossier
+  - assessments/authentication-dossier
 ---
 
 Every earlier week taught one instrument in isolation. This week applies all

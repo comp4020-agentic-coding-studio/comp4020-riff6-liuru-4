@@ -16,13 +16,13 @@ spec:
     before submission
 related:
   - lectures/week-05
-  - assessments/attribution-note
+  - assessments/attribution-report
   - people/idris-fenn
 ---
 
 ## Before the seminar
 
-Bring your attribution-note draft, even unfinished. This is the last
+Bring your attribution-report draft, even unfinished. This is the last
 seminar before it's due.
 
 ## In the seminar

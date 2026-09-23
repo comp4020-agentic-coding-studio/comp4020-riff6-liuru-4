@@ -16,7 +16,7 @@ spec:
     and why
 related:
   - lectures/week-12
-  - assessments/final-project
+  - assessments/oral-defence
 ---
 
 ## Before the seminar

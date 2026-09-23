@@ -14,7 +14,7 @@ spec:
     why each is genuinely disputed, not just obscure
 related:
   - lectures/week-07
-  - assessments/dossier
+  - assessments/authentication-dossier
 ---
 
 ## Before the seminar
