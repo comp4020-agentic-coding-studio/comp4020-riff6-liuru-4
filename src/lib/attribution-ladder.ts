@@ -77,6 +77,29 @@ export const attributionLadder: LadderEntry[] = [
   },
 ];
 
+/**
+ * The page's hero.
+ *
+ * Deliberately a *securely* attributed work. Putting a contested painting at
+ * the top of the page with no label would make exactly the unearned
+ * attribution claim this course exists to teach against --- so the banner
+ * gets the one the Met is prepared to sign, and the contested and copied
+ * ones stay in the ladder below where the wording is visible.
+ *
+ * A folding fan is a wide arc, which is why this one works as a banner when
+ * the hanging scrolls do not: 2000x1081, near enough 1.85:1.
+ */
+export const heroWork = {
+  attribution: "Tang Yin",
+  title: "Song of One Year",
+  date: "dated 1522",
+  medium: "Folding fan mounted as an album leaf; ink on gold-flecked paper",
+  creditLine: "Edward Elliott Family Collection, Douglas Dillon Gift, 1988",
+  accession: "1988.394.2",
+  objectUrl: "https://www.metmuseum.org/art/collection/search/44574",
+  alt: "A folding fan mounted flat as an album leaf: columns of cursive brush-written characters across gold-flecked paper, the text curving with the fan's arc, with a red seal at the lower left.",
+};
+
 /** Shared attribution for the strip as a whole. */
 export const ladderSource = {
   institution: "The Metropolitan Museum of Art",

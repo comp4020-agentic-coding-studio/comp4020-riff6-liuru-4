@@ -4,8 +4,9 @@ import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import { withBase } from "astro-theme-university/url";
 import AttributionLadder from "../components/AttributionLadder.astro";
-import heroImage from "../assets/images/hero-home.avif";
+import heroImage from "../assets/images/tang-yin/hero-song-of-one-year.jpg";
 import { courseMeta, learningOutcomes } from "../course-config";
+import { heroWork } from "../lib/attribution-ladder";
 import { sessionLabels, siteConfig } from "../site-config";
 ---
 
@@ -13,9 +14,20 @@ import { sessionLabels, siteConfig } from "../site-config";
   title={`${courseMeta.code}: ${courseMeta.title}`}
   description={courseMeta.description}
   heroImage={heroImage}
-  heroImageAlt="Two crossing brush strokes, gold and black, overlaid with three nested carved-seal marks, flat shapes on warm cream in a two-ink risograph print"
+  heroImageAlt={heroWork.alt}
   {...siteConfig}
 >
+  {/* The banner is a real painting, so it is captioned like one. Leaving a
+      work uncredited at the top of a connoisseurship site would be a poor
+      joke; leaving it unattributed would be the course's own failure mode. */}
+  <p class="hero-credit">
+    Above: <a href={heroWork.objectUrl} rel="noopener noreferrer" target="_blank"
+      ><cite>{heroWork.title}</cite></a
+    >, {heroWork.attribution}, {heroWork.date}. {heroWork.medium}. The
+    Metropolitan Museum of Art, {heroWork.creditLine} ({heroWork.accession}),
+    Open Access.
+  </p>
+
   <ul class="course-tags" aria-label="Course tags">
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
@@ -91,6 +103,14 @@ import { sessionLabels, siteConfig } from "../site-config";
 </ContentLayout>
 
 <style>
+  .hero-credit {
+    margin-block: 0 1.25rem;
+    color: var(--at-text-muted);
+    font-family: var(--at-font-ui);
+    font-size: 0.72rem;
+    line-height: 1.6;
+  }
+
   .course-tags {
     display: flex;
     flex-wrap: wrap;
