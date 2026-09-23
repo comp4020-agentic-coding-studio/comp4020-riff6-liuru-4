@@ -4,6 +4,9 @@ description:
   A full dossier on one painting of your choosing, defended live in the
   week-12 seminar against questions aimed at its weakest point.
 week: 12
+outcomes:
+  - LO4
+  - LO5
 due: 2027-05-28T12:00:00+10:00
 weight: 40
 marking:

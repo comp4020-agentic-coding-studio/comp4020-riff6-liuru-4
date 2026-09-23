@@ -2,8 +2,9 @@
 import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { withBase } from "astro-theme-university/url";
 import heroImage from "../assets/images/hero-home.avif";
-import { courseMeta } from "../course-config";
+import { courseMeta, learningOutcomes } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
 ---
 
@@ -34,6 +35,28 @@ import { sessionLabels, siteConfig } from "../site-config";
     attribution note, a full dossier, and a defended verdict on one
     painting's authorship, argued the way the field actually argues it.
   </p>
+
+  <h2>What you will be able to do</h2>
+  <p>
+    The five claims this course makes about you by the end. Each one is
+    carried by named lectures, seminars and assessment — the <a
+      href={withBase("/outcomes/")}>outcomes map</a
+    > shows which, and the build fails if any outcome here goes untaught or
+    unassessed.
+  </p>
+  <ol class="course-outcomes">
+    {
+      learningOutcomes.map((outcome) => (
+        <li>
+          <strong>
+            <span class="course-outcome-code">{outcome.code}</span>
+            {outcome.title}
+          </strong>
+          <span>{outcome.description}</span>
+        </li>
+      ))
+    }
+  </ol>
 
   <h2>Who it is for</h2>
   <p>
@@ -80,5 +103,28 @@ import { sessionLabels, siteConfig } from "../site-config";
     color: var(--at-text-secondary);
     background: var(--at-bg-alt);
     font-size: 0.9rem;
+  }
+
+  .course-outcomes {
+    margin-block: 1rem 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .course-outcomes li {
+    display: grid;
+    gap: 0.15rem;
+    padding-block: 0.7rem;
+    border-block-start: 1px solid var(--at-bg-alt);
+  }
+
+  .course-outcomes li:last-child {
+    border-block-end: 1px solid var(--at-bg-alt);
+  }
+
+  .course-outcome-code {
+    margin-inline-end: 0.5ch;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.6;
   }
 </style>

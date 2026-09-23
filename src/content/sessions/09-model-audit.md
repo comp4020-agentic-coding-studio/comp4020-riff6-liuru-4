@@ -4,6 +4,8 @@ description:
   Running Wren's stroke-level classifier against the semester's shortlist,
   then trying to break it.
 week: 9
+outcomes:
+  - LO4
 date: 2027-05-03
 teachers:
   - wren-okafor

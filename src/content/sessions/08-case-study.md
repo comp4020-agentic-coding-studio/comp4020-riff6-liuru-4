@@ -4,6 +4,9 @@ description:
   The shortlisted painting, argued with every instrument the semester has
   built, the week the dossier is due.
 week: 8
+outcomes:
+  - LO4
+  - LO5
 date: 2027-04-26
 teachers:
   - marisol-quaye

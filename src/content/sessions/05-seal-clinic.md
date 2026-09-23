@@ -4,6 +4,8 @@ description:
   Matching seal impressions against a dated reference set, then a last
   check on the attribution note before it's due.
 week: 5
+outcomes:
+  - LO3
 date: 2027-03-22
 teachers:
   - idris-fenn

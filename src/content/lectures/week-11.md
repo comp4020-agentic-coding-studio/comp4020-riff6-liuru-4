@@ -4,6 +4,8 @@ description:
   Tang Yin's own Buddhist sobriquet, the Diamond Sutra line behind it, and
   what illusion has to do with authenticity.
 week: 11
+outcomes:
+  - LO5
 date: 2027-05-17
 teachers:
   - marisol-quaye

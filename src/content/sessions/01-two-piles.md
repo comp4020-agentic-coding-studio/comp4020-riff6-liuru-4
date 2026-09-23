@@ -4,6 +4,8 @@ description:
   Six reproductions, three securely attributed and three disputed, sorted
   cold before anyone says which is which.
 week: 1
+outcomes:
+  - LO1
 date: 2027-02-22
 teachers:
   - marisol-quaye

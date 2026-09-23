@@ -4,6 +4,8 @@ description:
   Reading Zhang Daqian's interviews and later scholarship on his forgeries
   in his own words, and in the words of the collectors he fooled.
 week: 10
+outcomes:
+  - LO1
 date: 2027-05-10
 teachers:
   - marisol-quaye

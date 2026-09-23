@@ -4,6 +4,8 @@ description:
   Shortlisting three disputed paintings for week 8's case study from a
   sourcebook of Suzhou pian production records.
 week: 7
+outcomes:
+  - LO1
 date: 2027-04-19
 teachers:
   - marisol-quaye

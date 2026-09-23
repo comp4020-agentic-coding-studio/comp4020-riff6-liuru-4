@@ -4,6 +4,8 @@ description:
   Arguing the same disputed painting twice --- once from documents alone,
   once from the image alone --- and comparing verdicts.
 week: 2
+outcomes:
+  - LO4
 date: 2027-03-01
 teachers:
   - marisol-quaye

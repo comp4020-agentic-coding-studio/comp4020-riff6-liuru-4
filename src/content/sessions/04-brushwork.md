@@ -4,6 +4,8 @@ description:
   Building a shared vocabulary for describing a stroke, then using it
   against your own attribution-note painting.
 week: 4
+outcomes:
+  - LO2
 date: 2027-03-15
 teachers:
   - marisol-quaye

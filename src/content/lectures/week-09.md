@@ -4,6 +4,8 @@ description:
   Stroke-level machine learning as a second, tireless opinion --- and
   exactly what it can't tell you.
 week: 9
+outcomes:
+  - LO4
 date: 2027-05-03
 teachers:
   - wren-okafor

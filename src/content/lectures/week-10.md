@@ -4,6 +4,8 @@ description:
   Zhang Daqian, who forged well enough to fool the field he later joined,
   and what that does to the ethics of the fake.
 week: 10
+outcomes:
+  - LO1
 date: 2027-05-10
 teachers:
   - marisol-quaye

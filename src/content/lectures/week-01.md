@@ -4,6 +4,8 @@ description:
   The scale of the problem this course spends a semester on, and the case
   for using one painter's oeuvre to teach it.
 week: 1
+outcomes:
+  - LO1
 date: 2027-02-22
 teachers:
   - marisol-quaye

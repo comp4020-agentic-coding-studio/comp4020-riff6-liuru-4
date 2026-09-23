@@ -4,6 +4,8 @@ description:
   Ten-minute live defenses of the final project's verdict, questioned by
   the room, and the re-sort from week 1.
 week: 12
+outcomes:
+  - LO5
 date: 2027-05-24
 teachers:
   - marisol-quaye

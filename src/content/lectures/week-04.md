@@ -4,6 +4,8 @@ description:
   Brushwork as the connoisseur's primary evidence, and why it's also the
   hardest kind to defend in writing.
 week: 4
+outcomes:
+  - LO2
 date: 2027-03-15
 teachers:
   - marisol-quaye

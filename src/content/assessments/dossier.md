@@ -4,6 +4,12 @@ description:
   A full authentication dossier on one disputed painting, working every
   evidence type the semester has taught and logging where they disagree.
 week: 8
+outcomes:
+  - LO1
+  - LO2
+  - LO3
+  - LO4
+  - LO5
 due: 2027-04-30T12:00:00+10:00
 weight: 35
 marking:

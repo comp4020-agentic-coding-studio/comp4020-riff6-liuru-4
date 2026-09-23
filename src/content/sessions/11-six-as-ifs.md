@@ -4,6 +4,8 @@ description:
   A close, unhurried reading of the Diamond Sutra's closing gatha against
   Tang Yin's own choice of it as a name.
 week: 11
+outcomes:
+  - LO5
 date: 2027-05-17
 teachers:
   - marisol-quaye

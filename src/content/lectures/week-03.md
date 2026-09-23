@@ -4,6 +4,8 @@ description:
   Paper, silk, ink and pigment as evidence that doesn't care what anyone's
   eye thinks it sees.
 week: 3
+outcomes:
+  - LO2
 date: 2027-03-08
 teachers:
   - marisol-quaye

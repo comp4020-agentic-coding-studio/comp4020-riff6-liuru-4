@@ -4,6 +4,8 @@ description:
   Handling period-correct paper, silk and pigment samples under Idris's
   supervision, and reading a real fibre-analysis report.
 week: 3
+outcomes:
+  - LO2
 date: 2027-03-08
 teachers:
   - idris-fenn

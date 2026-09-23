@@ -4,6 +4,9 @@ description:
   A single disputed scroll, worked through with the whole toolkit, as a
   rehearsal for the dossier.
 week: 8
+outcomes:
+  - LO4
+  - LO5
 date: 2027-04-26
 teachers:
   - marisol-quaye

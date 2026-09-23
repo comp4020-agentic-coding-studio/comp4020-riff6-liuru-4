@@ -4,6 +4,8 @@ description:
   Why a seal is often more informative than a signature, and how seal
   forgery actually gets caught.
 week: 5
+outcomes:
+  - LO3
 date: 2027-03-22
 teachers:
   - marisol-quaye

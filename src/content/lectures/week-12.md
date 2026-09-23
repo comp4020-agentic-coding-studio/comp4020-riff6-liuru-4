@@ -4,6 +4,8 @@ description: >-
   The last lecture: what the final project asks for, and why a defended
   verdict still matters after week 11.
 week: 12
+outcomes:
+  - LO5
 date: 2027-05-24
 teachers:
   - marisol-quaye

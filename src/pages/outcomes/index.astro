@@ -1,0 +1,134 @@
+---
+import { getPublishedCollection } from "astro-course-university/content";
+import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import { learningOutcomes } from "../../course-config";
+import { sessionLabels, siteConfig } from "../../site-config";
+
+// The outcomes map, built by inverting the `outcomes: [LO2, LO3]` annotation
+// every lecture, seminar and assessment carries. Inverting at build time
+// rather than maintaining a second list by hand is what keeps the map honest:
+// there is exactly one place a mapping is declared, and it sits next to the
+// teaching it describes.
+const [lectures, sessions, assessments] = await Promise.all([
+  getPublishedCollection("lectures"),
+  getPublishedCollection("sessions"),
+  getPublishedCollection("assessments"),
+]);
+
+const byWeek = <T extends { data: { week: number } }>(items: T[]) =>
+  [...items].sort((a, b) => a.data.week - b.data.week);
+
+/** Everything in `items` that claims `code`, in teaching order. */
+const addressing = <T extends { data: { week: number; outcomes: string[] } }>(
+  items: T[],
+  code: string,
+) => byWeek(items.filter((item) => item.data.outcomes.includes(code)));
+
+const map = learningOutcomes.map((outcome) => ({
+  ...outcome,
+  lectures: addressing(lectures, outcome.code),
+  sessions: addressing(sessions, outcome.code),
+  assessments: addressing(assessments, outcome.code),
+}));
+
+const strands: {
+  heading: string;
+  base: string;
+  key: "lectures" | "sessions" | "assessments";
+}[] = [
+  { heading: "Lectures", base: "lectures", key: "lectures" },
+  { heading: sessionLabels.plural, base: "sessions", key: "sessions" },
+  { heading: "Assessment", base: "assessments", key: "assessments" },
+];
+---
+
+<ContentLayout
+  title="Learning outcomes"
+  description="What this course claims you can do by the end, and the lecture, seminar and assessment that each claim rests on."
+  {...siteConfig}
+>
+  <p>
+    Five outcomes, and the teaching that backs each one. Every lecture, {
+      sessionLabels.singular.toLowerCase()
+    } and assessment on this site declares which outcomes it carries, so this
+    page is generated from those declarations rather than kept in step by hand
+    — if a piece of teaching moves, the map moves with it.
+  </p>
+  <p>
+    An outcome with nothing assessed against it is a claim the course does not
+    actually test, so the build fails when one appears. Looking for a
+    particular topic instead? Press <kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd
+    > to search the full text of every page.
+  </p>
+
+  {
+    map.map((outcome) => (
+      <section class="outcome">
+        <h2 id={outcome.code.toLowerCase()}>
+          <span class="outcome-code">{outcome.code}</span>
+          {outcome.title}
+        </h2>
+        <p>{outcome.description}</p>
+        <div class="outcome-strands">
+          {strands.map(({ heading, base, key }) => (
+            <div>
+              <h3>{heading}</h3>
+              <ul>
+                {outcome[key].map((item) => (
+                  <li>
+                    <a href={withBase(`/${base}/${item.id}/`)}>
+                      <small>Week {item.data.week}</small> {item.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</ContentLayout>
+
+<style>
+  .outcome {
+    margin-block: 2.5rem;
+  }
+
+  .outcome-code {
+    display: inline-block;
+    margin-inline-end: 0.5ch;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.6;
+  }
+
+  .outcome-strands {
+    display: grid;
+    gap: 1rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    margin-block-start: 1rem;
+  }
+
+  .outcome-strands h3 {
+    margin-block-end: 0.35rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .outcome-strands ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .outcome-strands li + li {
+    margin-block-start: 0.3rem;
+  }
+
+  .outcome-strands small {
+    opacity: 0.7;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

@@ -2,11 +2,19 @@ import { defineCollection, reference } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { courseNodeSchema } from "astro-course-university/schemas";
+import { learningOutcomes } from "./course-config";
 
 const weekSchema = z.coerce.number().int().min(1).max(12);
 const courseNodeLoader = (dir: string) =>
   glob({ pattern: ["**/*.{md,mdx}", "!**/CLAUDE.md"], base: `src/content/${dir}` });
 const teacherRefs = z.array(reference("people")).min(1);
+
+// Which learning outcomes this piece of teaching carries. Validated against
+// the codes declared in `course-config.ts`, so a typo or a reference to an
+// outcome that was renamed fails the content load rather than quietly
+// dropping the item out of the /outcomes/ map.
+const outcomeCodes = learningOutcomes.map(({ code }) => code) as [string, ...string[]];
+const outcomeRefs = z.array(z.enum(outcomeCodes)).min(1);
 
 const weightedMarking = z
   .object({
@@ -39,6 +47,7 @@ export const collections = {
         week: weekSchema,
         date: z.coerce.date(),
         teachers: teacherRefs.optional(),
+        outcomes: outcomeRefs,
       })
       .loose(),
   }),
@@ -51,6 +60,7 @@ export const collections = {
         due: z.coerce.date(),
         weight: z.coerce.number().positive().max(100),
         marking: z.discriminatedUnion("mode", [weightedMarking, holisticMarking]).optional(),
+        outcomes: outcomeRefs,
       })
       .loose(),
   }),
@@ -62,6 +72,7 @@ export const collections = {
         week: weekSchema,
         date: z.coerce.date(),
         teachers: teacherRefs.optional(),
+        outcomes: outcomeRefs,
         slides: z
           .string()
           .regex(/^\/decks\/[a-z0-9-]+\/$/)

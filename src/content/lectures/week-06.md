@@ -4,6 +4,8 @@ description:
   Reading collector inscriptions and catalogue entries as documentary
   evidence, in the spirit of kaozheng textual criticism.
 week: 6
+outcomes:
+  - LO3
 date: 2027-03-29
 teachers:
   - marisol-quaye

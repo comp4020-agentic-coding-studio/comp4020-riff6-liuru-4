@@ -4,6 +4,8 @@ description:
   Close-reading a chain of translated colophons on one scroll, link by
   link, before the mid-semester break.
 week: 6
+outcomes:
+  - LO3
 date: 2027-03-29
 teachers:
   - marisol-quaye

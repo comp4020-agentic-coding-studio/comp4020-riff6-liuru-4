@@ -4,6 +4,8 @@ description:
   The Chinese connoisseurship tradition, and James Cahill's split between
   its "verbal" method and a "visual" one.
 week: 2
+outcomes:
+  - LO4
 date: 2027-03-01
 teachers:
   - marisol-quaye

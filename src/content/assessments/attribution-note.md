@@ -4,6 +4,8 @@ description:
   A short, single-thread argument for or against one painting's attribution,
   built from materials and/or brushwork evidence alone.
 week: 4
+outcomes:
+  - LO2
 due: 2027-03-26T12:00:00+10:00
 weight: 25
 marking:

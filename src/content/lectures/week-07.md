@@ -4,6 +4,8 @@ description:
   How a forgery market actually operates --- workshop production, demand,
   and the paintings that eventually outgrew the label "fake."
 week: 7
+outcomes:
+  - LO1
 date: 2027-04-19
 teachers:
   - marisol-quaye
